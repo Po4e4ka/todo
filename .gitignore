@@ -1,0 +1,3 @@
+# Project exclude paths
+/venv/
+/venv/lib/python3.10/

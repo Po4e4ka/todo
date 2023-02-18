@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
+</head>
+<body>
+<hgroup>
+    <h1>ICS Учёт рабочего времени</h1>
+    <h3>Вход в систему</h3>
+</hgroup>
+<form action="{% url 'auth' %}" method="POST">
+    {% csrf_token %}
+    <div class="group">
+        <input type="text" name="username"><span class="highlight"></span><span class="bar"></span>
+        <label>Логин</label>
+    </div>
+    <div class="group">
+        <input type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+        <label>Пароль</label>
+    </div>
+    <button type="submit" class="button buttonBlue">Войти
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+</form>
+<footer><a href="http://www.icstech.ru/" target="_blank"><img
+        src="https://www.icstech.ru/assets/img/ics.png"></a>
+    <p><a href="http://www.icstech.ru/" target="_blank">ICS Group</a></p>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'auth.js' %}"></script>
+</body>
+</html>
